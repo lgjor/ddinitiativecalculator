@@ -52,6 +52,10 @@ body::before {
     margin-bottom: 20px; /* Espaço para o final da página */
 }
 
+a {
+    color: rgb(204, 0, 204);
+}
+
 h1,h2,h3,h4,h5,h6{
     /* Alternative font */
     /* font-family: 'Cinzel Decorative', cursive, serif; */
