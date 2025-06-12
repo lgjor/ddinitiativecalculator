@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rola a Iniciativa D&D</title>
+    <link rel="stylesheet" href="assets/styles/index.css">
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <h1>Calculadora de Iniciativa D&D</h1>
+
+        <div id="musicplayer">Música de combate:</p>
+            <iframe 
+                width="200" 
+                height="50" 
+                src="https://www.youtube.com/embed/t3B802PIuB0?controls=1" 
+                title="D&D/RPG Combat Music Mix | 1 Hour | Royalty Free | Travis Savoie" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+            <a href="https://youtu.be/t3B802PIuB0" target="_blank" rel="noopener" alt="Combat Music Mix | 1 Hour | Royalty Free | Travis Savoie">Combat Music Mix | Royalty Free | Travis Savoie
+            </a>
+        </div>
+
+        <h2>Adicione os combatentes</h2>
+
+        <div class="input-section">
+            <div class="input-group">
+                <label for="combatant-name">Nome:</label>
+                <input type="text" id="combatant-name" placeholder="Nome do Combatente">
+            </div>
+            <div class="input-group">
+                <label for="dextery">Destreza:</label>
+                <input type="number" id="dextery" placeholder="Dex" value="0">                
+            </div>
+            <div class="input-group">
+                <label for="initiative-bonus">Bônus de Iniciativa:</label>
+                <input type="number" id="initiative-bonus" placeholder="Bônus de Iniciativa" value="0">
+            </div>
+
+            <div class="input-group">
+                <label>Tipo:</label>
+                <div class="checkbox-group" id="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="radio" id="type-hero" name="combatant-type" value="Herói" checked>
+                        <label for="type-hero">Herói</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="type-npc" name="combatant-type" value="NPC">
+                        <label for="type-npc">NPC</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="type-monster" name="combatant-type" value="Monstro">
+                        <label for="type-monster">Monstro</label>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group">
+                <label>Surpresa:</label> 
+                <div class="surprise-group" id="surprised-group">
+                    <div class="checkbox-item">
+                        <input type="radio" id="isSurpisedFalse" name="isSurpised" value=false checked>
+                        <label for="isSurpisedFalse">Não</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="radio" id="isSurpisedTrue" name="isSurpised" value=true unchecked>
+                        <label for="isSurpisedTrue">Sim</label>
+                    </div>
+                </div>
+            </div>
+            <button id="add-combatant-btn">Adicionar</button>
+        </div>
+
+        <div class="current-combatants">
+            <h2>Combatentes Atuais</h2>
+            <ul id="combatants-list">
+            </ul>
+        </div>
+
+        <div class="surprise-control">
+            <h2>Ordem de Iniciativa</h2>
+            <ol id="initiative-order">
+            </ol>
+        </div>
+
+        <div class="controls">
+            <button id="roll-all-btn">Rolar Iniciativa para Todos</button>
+        </div>
+
+        <div class="controls">
+            <button id="clear-all-btn">Limpar Tudo</button>
+        </div>
+
+        <section id="footer">
+            <p><span id="ano"></span> - Software Livre desenvolvido por
+            <a href="https://github.com/lgjor" target="_blank"><span class="heart">⭐</span> Aú Desviante - Github <span class="heart">💛</span></a></p>
+        </section>
+    </div>
+    <script src="assets/scripts/engine.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+@import "https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap";
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+/*# sourceMappingURL=/dnd.min.css.map */
+
+body {
+    font-family:Libre Baskerville,serif;
+    background:#f7ebcb;
+    color: #abb2bf;
+    font-size:1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha no topo */
+    min-height: 100vh;
+    margin: 20px;
+    padding: 0;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    box-sizing: border-box;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/assets/images/2560x1600-terrain-wa.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    opacity: 0.6;
+    
+}
+
+#musicplayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    background-color: rgba(30, 30, 30, 0.98);
+    padding: 30px;
+    border: 3px solid #b8860b;
+    border-radius: 8px;
+    box-shadow: 0 0 30px #000, 0 0 10px #b8860b inset;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px; /* Espaço para o final da página */
+}
+
+h1,h2,h3,h4,h5,h6{
+    /* Alternative font */
+    /* font-family: 'Cinzel Decorative', cursive, serif; */
+    color:#9e1f1f;
+    text-transform:uppercase;
+    line-height:1.1;
+    margin:24px 0 12px;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0,.1), 0 0 10px rgba(184, 134, 11,.3);
+    border-bottom: 2px solid #b8860b;
+}
+
+h1:first-letter,h2:first-letter,h3:first-letter,h4:first-letter,h5:first-letter,h6:first-letter{
+    font-size:150%;
+}
+
+h1{
+    font-size:1.5rem;
+    margin-bottom: 3rem;
+
+}
+
+h2{
+    font-size:1.25rem;
+}
+
+h1,h2{
+    border-bottom:2px solid tan;
+}
+
+p{
+    line-height:1.4;
+    margin:0
+}
+
+p+p{
+    text-indent:24px;
+    margin-top:0!important
+}
+
+.box{
+    background-color:#fff;
+    padding:16px;
+    border-left:2px solid #000;
+    border-right:2px solid #000;
+    overflow:hidden;
+    margin:16px 0;
+}
+
+.input-section, .controls {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+.input-section label{
+    font-size: .8rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+input[type="text"], input[type="number"] {
+    flex-grow: 1; /* Permite que os inputs ocupem o espaço disponível */
+    padding: 10px;
+    border: 1px solid #4b5263;
+    border-radius: 4px;
+    background-color: #d4d4d4;
+    color: #515153;
+    outline: none;
+}
+
+input[type="number"] {
+    flex-grow: 1;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    color: #000;
+}
+
+button {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: .7rem;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    background-color: #bba31d;
+    color: #282c34;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    white-space: nowrap; /* Evita que o texto do botão quebre */
+    transition: transform .3s ease, background-color .3s ease;
+}
+
+button:hover {
+    background-color: #d6bb23;
+    transform: scale(1.05);
+    transition: transform .3s ease, background-color .3s ease;
+}
+
+#add-combatant-btn {
+    margin-bottom: 15px;
+    align-self: center;
+}
+
+.current-combatants ul, .initiative-order-section ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.current-combatants li, .initiative-order-section li {
+    background-color: #232026;           /* Fundo quase preto */
+    border-left: 5px solid #b8860b;      /* Borda dourada à esquerda */
+    box-shadow: 0 2px 8px #00000055;     /* Sombra leve */
+    color: #e0c008;                      /* Texto dourado */
+    padding: 12px 18px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 1.08em;
+}
+
+#initiative-order li {
+
+    line-height: 2rem;
+    text-align: left;
+
+}
+
+.current-combatants li:nth-child(even) {
+    background-color: #2d232b;
+}
+
+.combatant-actions button {
+    background-color: #e06c75; /* Vermelho para remover */
+    margin-left: 5px;
+    padding: 5px 10px; /* Botões menores */
+}
+
+.combatant-actions button:hover {
+    background-color: #b85d66;
+}
+
+.combatant-info {
+    flex-grow: 1;
+    font-size: .8rem;;
+}
+
+.combatant-info strong {
+    color: #b22222;
+}
+
+span[style*="color:red"] {
+    color: #ff4444 !important;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.initiative-order-section li {
+    background-color: #5c6370;
+    font-weight: bold;
+    color: #fff;
+}
+
+.initiative-order-section li:nth-child(even) {
+    background-color: #545a66;
+}
+
+.initiative-order-section li.fallen,
+#initiative-order li.fallen {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+#footer {
+    width: 100%;
+    display: flex;
+    font-size: 0.8rem;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+    margin-top: 30px;
+    color: #b8860b;
+}
+
+#footer .heart {
+    display: none;
+}
+
+#footer p {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+#footer a {
+    text-decoration: none;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+}
+
+#footer a:hover, a:focus {
+    color: #e0c008; 
+
+   .heart {
+        display: inline-block;
+   }
+}
+
+/* Fade in */
+#footer a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.1em;
+  background-color: #b8860b;
+  opacity: 0;
+  transition: opacity 300ms, transform 300ms;
+}
+
+#footer a:hover::after,
+a:focus::after {
+  opacity: 1;
+  transform: translate3d(0, 0.2em, 0);
+}
+
+/* Responsividade básica */
+@media (max-width: 600px) {
+    .input-section, .controls {
+        flex-direction: column;
+    }
+    input[type="number"] {
+        width: 100%; /* Ocupa a largura total em telas pequenas */
+    }
+}
