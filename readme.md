@@ -24,7 +24,7 @@
 
 ## Como usar
 
-1. Acesse: [https://lgjor.github.io/ddinitiativecalculator/](https://lgjor.github.io/dndinitiativecalculator/)
+1. Acesse: [https://lgjor.github.io/dndinitiativecalculator/](https://lgjor.github.io/dndinitiativecalculator/)
 
 
 
