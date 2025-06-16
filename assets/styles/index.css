@@ -57,6 +57,10 @@ a {
 }
 
 #musicplayer {
+    font-size: 0.8rem;
+}
+
+#musicplayer a {
     font-size: 0.7rem;
 }
 
