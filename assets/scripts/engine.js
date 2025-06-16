@@ -248,6 +248,60 @@ addCombatantBtn.addEventListener('click', addCombatant);
 rollAllBtn.addEventListener('click', rollAllInitiatives);
 clearAllBtn.addEventListener('click', clearAll);
 
+//Listener para o campo de nome do combatente
+combatantNameInput.addEventListener('input', handleMonsterAutocomplete);
+
+// Buscar monstros na API conforme o usuário digita
+let monsterSuggestions = [];
+
+async function handleMonsterAutocomplete(event) {
+    // Só sugere se o tipo selecionado for "Monstro"
+    const type = document.querySelector('input[name="combatant-type"]:checked').value;
+    if (type !== "Monstro") {
+        showSuggestions([]);
+        return;
+    }
+    // Verifica se o campo de nome não está vazio e tem pelo menos 2 caracteres
+    const query = event.target.value.trim().toLowerCase();
+    if (query.length < 2) {
+        showSuggestions([]);
+        return;
+    }
+
+    // Busca lista de monstros
+    const response = await fetch('https://www.dnd5eapi.co/api/monsters');
+    const data = await response.json();
+    monsterSuggestions = data.results.filter(monster =>
+        monster.name.toLowerCase().includes(query)
+    ).slice(0, 5); // Limita a 5 sugestões
+
+    showSuggestions(monsterSuggestions);
+}
+
+function showSuggestions(suggestions) {
+    const ul = document.getElementById('monster-suggestions');
+    ul.innerHTML = '';
+    suggestions.forEach(monster => {
+        const li = document.createElement('li');
+        li.textContent = monster.name;
+        li.onclick = () => selectMonster(monster);
+        ul.appendChild(li);
+    });
+    ul.style.display = suggestions.length ? 'block' : 'none';
+}
+
+async function selectMonster(monster) {
+    // Busca detalhes do monstro
+    const response = await fetch(`https://www.dnd5eapi.co${monster.url}`);
+    const data = await response.json();
+
+    combatantNameInput.value = data.name;
+    combatantDextery.value = data.dexterity;
+    initiativeBonusInput.value = Math.floor((data.dexterity - 10) / 2);
+
+    showSuggestions([]);
+}
+
 // Opcional: Adicionar combatente ao pressionar Enter no campo de bônus
 initiativeBonusInput.addEventListener('keypress', (event) => {
     if (event.key === 'Enter') {

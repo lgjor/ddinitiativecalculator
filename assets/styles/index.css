@@ -134,12 +134,20 @@ p+p{
 
 input[type="text"], input[type="number"] {
     flex-grow: 1; /* Permite que os inputs ocupem o espaço disponível */
-    padding: 10px;
+    width: 8rem;
     border: 1px solid #4b5263;
     border-radius: 4px;
     background-color: #d4d4d4;
     color: #515153;
     outline: none;
+}
+
+input[type="text"], input[type="number"] {
+    width: 12rem;
+}
+
+input[type="number"] {
+    width: 8rem;
 }
 
 input[type="number"] {
@@ -258,9 +266,12 @@ span[style*="color:red"] {
     font-size: 0.8rem;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align:center;
     margin-top: 30px;
+    gap: 1px;
     color: #b8860b;
+    padding-bottom: 20px;
 }
 
 #footer .heart {
@@ -268,13 +279,12 @@ span[style*="color:red"] {
 }
 
 #footer p {
-    margin-left: 0;
-    margin-right: 0;
+    text-align: center;
+    margin: 0 0 6px 0;
 }
 
 #footer a {
     text-decoration: none;
-    display: block;
     position: relative;
     padding: 0.2em 0;
 }
@@ -283,7 +293,7 @@ span[style*="color:red"] {
     color: #e0c008; 
 
    .heart {
-        display: inline-block;
+        display: inline;
    }
 }
 
@@ -304,6 +314,26 @@ span[style*="color:red"] {
 a:focus::after {
   opacity: 1;
   transform: translate3d(0, 0.2em, 0);
+}
+
+#monster-suggestions {
+    position: absolute;
+    background: #222;
+    color: #ffd700;
+    border: 1px solid #b8860b;
+    z-index: 10;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+#monster-suggestions li {
+    padding: 6px 12px;
+    cursor: pointer;
+}
+#monster-suggestions li:hover {
+    background: #b8860b;
+    color: #222;
 }
 
 /* Responsividade básica */

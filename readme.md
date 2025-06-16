@@ -7,6 +7,8 @@
 ## Funcionalidades
 
 - Adicione combatentes (Herói's, NPC's ou Monstros) com nome, bônus de iniciativa e destreza.
+- **Novo:** Consulta de monstros utilizando a D&D 5e API
+- Ao adicionar um "Monstro", consulte pela API e preencha automaticamente destreza e bônus de iniciativa.
 - Marque combatentes como surpresos ou caídos.
 - Role iniciativa individualmente ou para todos os combatentes.
 - Exibe a ordem de iniciativa, colocando surpresos por último e caídos riscados.
